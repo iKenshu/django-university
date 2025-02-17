@@ -105,9 +105,9 @@ Ejemplo de solicitud para crear una inscripción:
 
 ```json
 {
-    'student_id': 1,
-    'inscriptions': [
-        {'subject_id': 1, 'calification': 3.5}
+    "student_id": 1,
+    "inscriptions": [
+        {"subject_id": 1, "calification": 3.5}
     ]
 }
 ```
