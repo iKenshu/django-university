@@ -21,7 +21,7 @@ Este es un proyecto de ejemplo para una universidad utilizando Django y Django R
 
     ```sh
     python -m venv venv
-    source venv/bin/activate  # En Windows usa `venv\Scripts\activate`
+    source venv/bin/activate
     ```
 
 3. Instala las dependencias:
