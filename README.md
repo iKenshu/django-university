@@ -134,6 +134,7 @@ La base de datos tiene las siguientes tablas:
 Hice un diagrama de la base de datos para ayudar a entender las relaciones aunque hay una tabla extra para la relacion de materia consigo misma:
 
 
+![Diagrama de la base de datos](https://i.imgur.com/yQSJLUO.png)
 
 ## Licencia
 
