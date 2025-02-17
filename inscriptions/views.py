@@ -1,4 +1,10 @@
+"""
+This file contains the views for the inscriptions app
+"""
+
 from django.shortcuts import render
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status, viewsets
 from rest_framework.response import Response
 
@@ -14,6 +20,24 @@ class InscriptionViewSet(viewsets.ModelViewSet):
     queryset = Inscription.objects.all()
     serializer_class = InscriptionSerializer
 
+    @swagger_auto_schema(
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            properties={
+                "student_id": openapi.Schema(type=openapi.TYPE_INTEGER),
+                "inscriptions": openapi.Schema(
+                    type=openapi.TYPE_ARRAY,
+                    items=openapi.Schema(
+                        type=openapi.TYPE_OBJECT,
+                        properties={
+                            "subject_id": openapi.Schema(type=openapi.TYPE_INTEGER),
+                            "calification": openapi.Schema(type=openapi.TYPE_NUMBER),
+                        },
+                    ),
+                ),
+            },
+        )
+    )
     def create(self, request, *args, **kwargs):
         """
         Create multiple inscriptions
