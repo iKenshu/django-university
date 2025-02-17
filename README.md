@@ -13,7 +13,7 @@ Este es un proyecto de ejemplo para una universidad utilizando Django y Django R
 1. Clona el repositorio:
 
     ```sh
-    git clone <URL_DEL_REPOSITORIO>
+    git clone https://github.com/iKenshu/django-university.git
     cd university
     ```
 
