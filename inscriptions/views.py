@@ -45,12 +45,13 @@ class InscriptionViewSet(viewsets.ModelViewSet):
 
         serializer = BulkInscriptionSerializer(data=request.data)
 
-        if serializer.is_valid():
-            serializer.save()
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-            return Response(
-                {"message": "Inscriptions created successfully"},
-                status=status.HTTP_201_CREATED,
-            )
-
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        serializer.save()
+        return Response(
+            {
+                "message": "Inscriptions created successfully",
+            },
+            status=status.HTTP_201_CREATED,
+        )
